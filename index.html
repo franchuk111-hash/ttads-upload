@@ -363,7 +363,7 @@ var DEFAULT_LANG = "en";
     var md = document.querySelector('meta[name="description"]'); if (md && d.desc) md.setAttribute("content", d.desc);
     var ogt = document.querySelector('meta[property="og:title"]'); if (ogt && d.title) ogt.setAttribute("content", d.title);
     var ogd = document.querySelector('meta[property="og:description"]'); if (ogd && d.desc) ogd.setAttribute("content", d.desc);
-    for (var i=0;i<4;i++){ var el=document.querySelector('[data-t="nav'+i+'"]'); if(el) el.textContent = d.nav[i]; }
+    for (let i=0;i<4;i++){ document.querySelectorAll('[data-t="nav'+i+'"]').forEach(function(el){ el.textContent = d.nav[i]; }); }
     var map = {h1:d.h1,sub:d.sub,micro:d.micro,cta:d.cta,b1t:d.b1t,b1d:d.b1d,b2t:d.b2t,b2d:d.b2d,
       b3t:d.b3t,b3d:d.b3d,s1t:d.s1t,s1d:d.s1d,s2t:d.s2t,s2d:d.s2d,s3t:d.s3t,s3d:d.s3d,
       sec1:d.sec1,sec2:d.sec2,sec3:d.sec3,cap1:d.cap1,cap2:d.cap2,cap3:d.cap3,cap4:d.cap4,cap5:d.cap5,cap6:d.cap6,band_t:d.band_t,band_d:d.band_d,disc:d.disc,foot:d.foot,docs:d.docs,contacts:d.contacts,
