@@ -98,7 +98,7 @@ var L = {
   "faq": [
    [
     "¿Qué pasa después del clic?",
-    "Se abre el sitio del socio: la plataforma TikTok Ads."
+    "Se abre el Administrador de anuncios de TikTok: la plataforma publicitaria."
    ],
    [
     "¿Necesito una web?",
@@ -160,7 +160,7 @@ var L = {
   "faq": [
    [
     "O que acontece após o clique?",
-    "Abre-se o site do parceiro — a plataforma TikTok Ads."
+    "Abre-se o Gerenciador de Anúncios do TikTok — a plataforma de anúncios."
    ],
    [
     "Preciso de um site?",
@@ -222,7 +222,7 @@ var L = {
   "faq": [
    [
     "Que se passe-t-il après le clic ?",
-    "Le site partenaire s’ouvre — la plateforme TikTok Ads."
+    "Le Gestionnaire de publicités TikTok s’ouvre — la plateforme publicitaire."
    ],
    [
     "Faut-il un site web ?",
@@ -284,7 +284,7 @@ var L = {
   "faq": [
    [
     "ماذا يحدث بعد النقر؟",
-    "يُفتح موقع الشريك — منصة TikTok Ads."
+    "يُفتح مدير إعلانات تيك توك — منصة الإعلان."
    ],
    [
     "هل أحتاج موقعًا إلكترونيًا؟",
@@ -346,7 +346,7 @@ var L = {
   "faq": [
    [
     "Sau khi nhấp thì sao?",
-    "Trang của đối tác mở ra — nền tảng TikTok Ads."
+    "Trình quản lý quảng cáo TikTok mở ra — nền tảng quảng cáo."
    ],
    [
     "Có cần website không?",
@@ -408,7 +408,7 @@ var L = {
   "faq": [
    [
     "Tıkladıktan sonra ne olur?",
-    "İş ortağının sitesi (TikTok Ads platformu) açılır."
+    "TikTok Reklam Yöneticisi açılır — reklam platformu."
    ],
    [
     "Web sitesi gerekli mi?",
@@ -594,7 +594,7 @@ var L = {
   "faq": [
    [
     "Ce se întâmplă după clic?",
-    "Se deschide site-ul partenerului — platforma TikTok Ads."
+    "Se deschide Managerul de reclame TikTok — platforma de publicitate."
    ],
    [
     "Am nevoie de un site?",
@@ -656,7 +656,7 @@ var L = {
   "faq": [
    [
     "클릭 후 어떻게 되나요?",
-    "파트너 사이트(TikTok Ads 플랫폼)가 열립니다."
+    "TikTok 광고 관리자가 열립니다 — 광고 플랫폼입니다."
    ],
    [
     "웹사이트가 필요한가요?",
