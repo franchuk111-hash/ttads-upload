@@ -144,13 +144,13 @@ h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.03em;font-we
 .gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;padding:18px;
   background:rgba(9,9,12,.62);backdrop-filter:blur(10px) saturate(120%);transition:opacity .28s}
 .gate.hide{opacity:0;pointer-events:none}
-.gate-card{background:#fff;border-radius:24px;padding:30px 28px 24px;width:min(520px,100%);
+.gate-card{background:#fff;border-radius:24px;padding:24px 24px 18px;width:min(520px,100%);
   box-shadow:0 30px 80px rgba(0,0,0,.32);max-height:94vh;overflow:auto;text-align:center}
-.gate-card .mark{width:46px;height:46px;border-radius:13px;margin:0 auto 16px}
+.gate-card .mark{width:42px;height:42px;border-radius:12px;margin:0 auto 12px}
 .gate-card .mark svg{width:26px;height:26px}
-.gate-card h2{font-size:26px;letter-spacing:-.03em;color:var(--ink)}
-.gs{margin-top:8px;color:var(--muted);font-size:14.5px}
-.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 18px;max-height:296px;overflow-y:auto;
+.gate-card h2{font-size:24px;letter-spacing:-.03em;color:var(--ink)}
+.gs{margin-top:6px;color:var(--muted);font-size:14.5px}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 14px;max-height:250px;overflow-y:auto;
   padding-right:5px;scrollbar-width:thin;text-align:left}
 @media(min-width:430px){.langs{grid-template-columns:repeat(3,1fr)}}
 .langs::-webkit-scrollbar{width:5px}
@@ -160,8 +160,8 @@ h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.03em;font-we
   overflow:hidden;text-overflow:ellipsis}
 .lang:hover{border-color:#BDBEC6}
 .lang.on{background:var(--red);border-color:var(--red);color:#fff}
-.robot{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:14px;
-  padding:14px 16px;cursor:pointer;text-align:left;transition:.15s;background:#fff}
+.robot{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px;cursor:pointer;text-align:left;transition:.15s;background:#fff}
 .robot:hover{border-color:#BDBEC6}
 .robot.on{border-color:var(--red);background:#FFF7F9}
 .box{width:22px;height:22px;flex:0 0 22px;border:2px solid #1B1B1F;border-radius:6px;display:grid;
@@ -169,10 +169,10 @@ h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.03em;font-we
 .robot.on .box{background:var(--red);border-color:var(--red);color:#fff}
 .robot span{display:block;font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.3}
 .robot small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-#gateGo{width:100%;margin-top:14px}
+#gateGo{width:100%;margin-top:12px;height:48px}
 #gateGo:disabled{background:#F4C9D7;border-color:#F4C9D7;color:#fff;cursor:not-allowed}
-.gnote{margin-top:12px;font-size:12px;color:#8A8B91;line-height:1.5}
-.glink{margin-top:14px;background:none;border:0;color:var(--link);font-family:inherit;font-size:13.5px;
+.gnote{margin-top:10px;font-size:12px;color:#8A8B91;line-height:1.5}
+.glink{margin-top:10px;background:none;border:0;color:var(--link);font-family:inherit;font-size:13.5px;
   font-weight:600;cursor:pointer}
 .glink:hover{text-decoration:underline}
 
