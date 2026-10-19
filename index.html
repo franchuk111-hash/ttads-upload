@@ -102,7 +102,8 @@ footer a:hover{color:#fff}
 .gate-card .mark{width:46px;height:46px;font-size:19px;margin:0 auto 16px;border-radius:13px}
 .gate h2{font-size:22px;margin:0 0 6px;letter-spacing:-.5px}
 .gate p.gs{color:var(--muted);font-size:14px;margin:0 0 20px}
-.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;max-height:236px;overflow-y:auto;padding-right:4px;scrollbar-width:thin}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;max-height:300px;overflow-y:auto;padding-right:5px;scrollbar-width:thin}
+@media(min-width:430px){.langs{grid-template-columns:repeat(3,1fr)}}
 .lang{padding:9px 10px;border-radius:10px;text-align:center;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#cfd4de;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
 .lang:hover{border-color:rgba(255,255,255,.28)}
 .lang.on{background:linear-gradient(135deg,var(--pink),#ff5c8a);border-color:transparent;color:#fff;box-shadow:0 8px 22px #ff2d6f40}
