@@ -1,7 +1,7 @@
-/* Language packs — 14 locales, default: en (geo-driven set) */
-var LANG_ORDER = ["en", "es", "pt", "fr", "ar", "vi", "tr", "pl", "ro", "ko", "ru", "uk", "bg", "cs"];
+/* Language packs — 15 locales, default: en (geo-driven set) */
+var LANG_ORDER = ["en", "es", "pt", "fr", "ar", "vi", "tr", "pl", "hr", "ro", "ko", "ru", "uk", "bg", "cs"];
 
-var LANG_NAMES = { "en": "English", "es": "Español", "pt": "Português", "fr": "Français", "ar": "العربية", "vi": "Tiếng Việt", "tr": "Türkçe", "pl": "Polski", "ro": "Română", "ko": "한국어", "ru": "Русский", "uk": "Українська", "bg": "Български", "cs": "Čeština" };
+var LANG_NAMES = {"en": "English", "es": "Español", "pt": "Português", "fr": "Français", "ar": "العربية", "vi": "Tiếng Việt", "tr": "Türkçe", "pl": "Polski", "hr": "Hrvatski", "ro": "Română", "ko": "한국어", "ru": "Русский", "uk": "Українська", "bg": "Български", "cs": "Čeština"};
 
 var L = {
  "en": {
@@ -419,6 +419,58 @@ var L = {
   "docs": "Dokumenty",
   "contacts": "Kontakt",
   "faq_sub": "W skrócie"
+ },
+ "hr": {
+  "nav": [
+   "Značajke",
+   "Kako radi",
+   "FAQ",
+   "Kontakt"
+  ],
+  "cta": "Idi na TikTok Ads",
+  "gate_title": "Odaberite jezik",
+  "gate_sub": "Potvrdite da ste osoba za nastavak",
+  "gate_check": "Nisam robot",
+  "gate_note": "U ovom koraku ne prikupljamo vaše podatke",
+  "gate_btn": "Nastavi",
+  "gate_partner": "Zatim idete na web mjesto partnera putem affiliate poveznice. Cijena se ne mijenja.",
+  "gate_skip": "Prvo pročitajte informacije",
+  "h1": "TikTok Ads za tvrtke: kampanje, kreative, analitika",
+  "sub": "Kako radi TikTok for Business: aukcija, formati In-Feed i Spark Ads, TikTok Pixel i izvještaji. Jedan klik do partnerske platforme.",
+  "micro": "Jedan klik do partnerske platforme. Affiliate poveznica — cijena ostaje ista.",
+  "b1t": "Aukcija, ne feed",
+  "b1d": "Kupujete prikaze od ljudi koji već gledaju videozapise u vašoj niši.",
+  "b2t": "Formati za mobilne",
+  "b2d": "In-Feed, Spark Ads, TopView, Smart+. Vertikalni video 9:16 preko cijelog ekrana.",
+  "b3t": "Podaci, a ne nagađanja",
+  "b3d": "TikTok Pixel pokazuje koja je kreativa donijela kupnju.",
+  "s1t": "Idite na platformu",
+  "s1d": "Jedan klik i unutra ste u TikTok Ads.",
+  "s2t": "Otvorite poslovni račun",
+  "s2d": "TikTok for Business: oglasni račun i plaćanje.",
+  "s3t": "Pokrenite kampanju",
+  "s3d": "Cilj, geo, proračun, kreative. Minimum 50 USD dnevno.",
+  "faq": [
+   [
+    "Što se događa nakon klika?",
+    "Otvara se web mjesto partnera — platforma TikTok Ads."
+   ],
+   [
+    "Treba li mi web stranica?",
+    "Ne. Za usluge je dovoljan obrazac ili messenger."
+   ],
+   [
+    "Koliko košta?",
+    "Oglasni proračun TikTok: više od 50 USD dnevno po kampanji."
+   ]
+  ],
+  "band_t": "Spremni pogledati oglasni račun?",
+  "band_d": "Prijenos traje jedan klik.",
+  "disc": "Affiliate poveznica: klik nam može donijeti proviziju. Cijena se ne mijenja. Nismo službeni predstavnik TikToka, ByteDancea ni TikTok for Businessa.",
+  "foot": "Neovisna informativna usluga o oglašavanju na TikTok for Businessu.",
+  "docs": "Dokumenti",
+  "contacts": "Kontakt",
+  "faq_sub": "Ukratko"
  },
  "ro": {
   "nav": [
