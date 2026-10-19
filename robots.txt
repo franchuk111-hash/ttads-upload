@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getstarted-tt-ads.apps.com.ua/sitemap.xml
