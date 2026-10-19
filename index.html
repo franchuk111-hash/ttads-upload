@@ -387,12 +387,9 @@ var DEFAULT_LANG = "en";
   rb.addEventListener("keydown", function(e){ if (e.key===" "||e.key==="Enter"){ e.preventDefault(); toggleRobot(); } });
   $("#gateSkip").addEventListener("click", closeGate);
 
+  /* English is always the entry language: no auto-detect, no stored choice.
+     Override only via ?lang=xx (used for geo-specific ad URLs). */
   var initial = (qs.get("lang")||"").toLowerCase();
-  if (!L[initial]) { try { initial = localStorage.getItem("lp_lang") || ""; } catch(e){ initial = ""; } }
-  if (!L[initial]) {
-    var nav = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-    initial = L[nav] ? nav : DEFAULT_LANG;
-  }
   if (!L[initial]) initial = DEFAULT_LANG;
   apply(initial); syncGate();
 
@@ -412,8 +409,7 @@ var DEFAULT_LANG = "en";
   document.querySelectorAll("a[data-aff],button[data-aff]").forEach(function(a){
     a.addEventListener("click", function(ev){
       var dest = buildUrl();
-      try { try { localStorage.setItem("lp_lang", state.lang); } catch(e){}
-            (window.dataLayer = window.dataLayer || []).push({event:"aff_click", aff_dest:dest, lang:state.lang, gclid:qs.get("gclid")||""}); } catch(e){}
+      try { (window.dataLayer = window.dataLayer || []).push({event:"aff_click", aff_dest:dest, lang:state.lang, gclid:qs.get("gclid")||""}); } catch(e){}
       if (!isAbs(dest)) { ev.preventDefault(); alert("Affiliate link is not configured yet."); return; }
       ev.preventDefault();
       var done = false, go = function(){ if (!done){ done = true; location.href = dest; } };
