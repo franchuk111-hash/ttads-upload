@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TikTok Ads — реклама для бізнесу: кампанії, формати, аналітика</title>
-<meta name="description" content="Як запустити рекламу в TikTok Ads: аукціон, формати In-Feed і Spark Ads, TikTok Pixel, аналітика. Перехід на платформу партнера в один клік.">
+<title>TikTok Ads for business: campaigns, creatives, analytics</title>
+<meta name="description" content="How TikTok for Business works: the auction, In-Feed and Spark Ads formats, TikTok Pixel and reporting. One click to the partner platform.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://getstarted-tt-ads.apps.com.ua/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="TikTok Ads — реклама для бізнесу">
-<meta property="og:description" content="Кампанії, формати, піксель, аналітика. Один клік до платформи.">
+<meta property="og:title" content="TikTok Ads for business: campaigns, creatives, analytics">
+<meta property="og:description" content="Auction, formats, pixel, reporting. One click to the partner platform.">
 <meta property="og:url" content="https://getstarted-tt-ads.apps.com.ua/">
-<meta property="og:locale" content="uk_UA">
+<meta property="og:locale" content="en_US">
 <meta name="theme-color" content="#07080d">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff2d6f'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 20l7-9 7 9' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
@@ -102,8 +102,8 @@ footer a:hover{color:#fff}
 .gate-card .mark{width:46px;height:46px;font-size:19px;margin:0 auto 16px;border-radius:13px}
 .gate h2{font-size:22px;margin:0 0 6px;letter-spacing:-.5px}
 .gate p.gs{color:var(--muted);font-size:14px;margin:0 0 20px}
-.langs{display:flex;gap:9px;justify-content:center;margin-bottom:20px}
-.lang{padding:9px 17px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#cfd4de;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;max-height:236px;overflow-y:auto;padding-right:4px;scrollbar-width:thin}
+.lang{padding:9px 10px;border-radius:10px;text-align:center;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#cfd4de;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
 .lang:hover{border-color:rgba(255,255,255,.28)}
 .lang.on{background:linear-gradient(135deg,var(--pink),#ff5c8a);border-color:transparent;color:#fff;box-shadow:0 8px 22px #ff2d6f40}
 .robot{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:rgba(255,255,255,.03);cursor:pointer;margin-bottom:18px;user-select:none}
@@ -127,54 +127,53 @@ footer a:hover{color:#fff}
  .sticky{display:block}
  body{padding-bottom:78px}
 }
+
+.langs::-webkit-scrollbar{width:5px}
+.langs::-webkit-scrollbar-thumb{background:#333a4a;border-radius:3px}
+.gate-card{max-height:92vh;overflow:auto}
 </style>
 </head>
 <body class="locked">
 <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
 
-<!-- GATE -->
 <div class="gate" id="gate">
   <div class="gate-card">
     <div class="mark">▲</div>
-    <h2 data-t="gate_title">Оберіть мову</h2>
-    <p class="gs" data-t="gate_sub">Підтвердіть, що ви людина, щоб продовжити</p>
-    <div class="langs" role="group" aria-label="Language">
-      <button class="lang on" data-lang="ua" type="button">Українська</button>
-      <button class="lang" data-lang="ru" type="button">Русский</button>
-      <button class="lang" data-lang="en" type="button">English</button>
-    </div>
+    <h2 data-t="gate_title">Choose your language</h2>
+    <p class="gs" data-t="gate_sub">Confirm you are human to continue</p>
+    <div class="langs" id="langGrid" role="group" aria-label="Language"></div>
     <div class="robot" id="robot" role="checkbox" aria-checked="false" tabindex="0">
       <div class="box">✓</div>
-      <div><span data-t="gate_check">Я не робот</span><small data-t="gate_note">Ми не збираємо ваші дані на цьому кроці</small></div>
+      <div><span data-t="gate_check">I’m not a robot</span><small data-t="gate_note">We don’t collect your data at this step</small></div>
     </div>
-    <button class="btn btn-main" id="gateGo" type="button" disabled data-aff data-t="gate_btn">Продовжити</button>
-    <p class="gnote" data-t="gate_partner">Далі — сайт партнера за партнерським посиланням.</p>
-    <button class="glink" id="gateSkip" type="button" data-t="gate_skip">Спочатку ознайомитися з інформацією</button>
+    <button class="btn btn-main" id="gateGo" type="button" disabled data-aff data-t="gate_btn">Continue</button>
+    <p class="gnote" data-t="gate_partner">Next you go to the partner website via an affiliate link. Your price does not change.</p>
+    <button class="glink" id="gateSkip" type="button" data-t="gate_skip">Read the information first</button>
   </div>
 </div>
 
 <header class="site"><div class="wrap nav">
   <a class="logo" href="/"><span class="mark">▲</span> TikTok Ads</a>
   <nav>
-    <a href="#features" data-t="nav0">Можливості</a>
-    <a href="#how" data-t="nav1">Як працює</a>
+    <a href="#features" data-t="nav0">Features</a>
+    <a href="#how" data-t="nav1">How it works</a>
     <a href="#faq" data-t="nav2">FAQ</a>
-    <a href="/contacts/" data-t="nav3">Контакти</a>
+    <a href="/contacts/" data-t="nav3">Contacts</a>
   </nav>
-  <a class="btn btn-main btn-sm" href="#" data-aff data-t="cta">Перейти до TikTok Ads</a>
+  <a class="btn btn-main btn-sm" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
 </div></header>
 
 <main>
 <div class="hero"><div class="wrap hero-grid">
   <div>
-    <div class="eyebrow"><span class="dot"></span> TikTok for Business · аукціон · UA</div>
-    <h1 data-t="h1">Реклама в TikTok Ads для бізнесу, який хоче заявки, а не просто перегляди</h1>
-    <p class="lead" data-t="sub">TikTok for Business дає доступ до аукціону, де ціна кліка ще нижча за Meta.</p>
+    <div class="eyebrow"><span class="dot"></span> TikTok for Business · auction · global</div>
+    <h1 data-t="h1">TikTok Ads for business: campaigns, creatives, analytics</h1>
+    <p class="lead" data-t="sub">How TikTok for Business actually works: the auction, In-Feed and Spark Ads formats, TikTok Pixel and reporting.</p>
     <div class="hero-cta">
-      <a class="btn btn-main" href="#" data-aff data-t="cta">Перейти до TikTok Ads</a>
-      <a class="btn btn-ghost" href="#features" data-t="nav0">Можливості</a>
+      <a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
+      <a class="btn btn-ghost" href="#features" data-t="nav0">Features</a>
     </div>
-    <p class="micro" data-t="micro">Перехід на платформу партнера в один клік.</p>
+    <p class="micro" data-t="micro">One click to the partner platform. This is an affiliate link — your price stays the same.</p>
   </div>
   <div class="phone" aria-hidden="true">
     <div class="screen">
@@ -183,7 +182,7 @@ footer a:hover{color:#fff}
         <div class="reel-copy">
           <b>TikTok Ads</b>
           <small>In-Feed · Spark Ads · Smart+</small>
-          <div class="mock-cta">Перейти →</div>
+          <div class="mock-cta">Open →</div>
         </div>
         <div class="bars">
           <div><div class="bar">♥</div>12.4k</div>
@@ -192,92 +191,107 @@ footer a:hover{color:#fff}
         </div>
       </div>
     </div>
-    <div class="metric m1"><b>9:16</b><small>вертикальний формат</small></div>
-    <div class="metric m2"><b>$50</b><small>мін. бюджет / день</small></div>
+    <div class="metric m1"><b>9:16</b><small>vertical format</small></div>
+    <div class="metric m2"><b>$50</b><small>min. daily budget</small></div>
   </div>
 </div></div>
 
 <section id="features"><div class="wrap">
-  <h2 data-t="b1t">Аукціон, а не «стрічка»</h2>
-  <p class="sub" data-t="b1d">Ви купуєте покази у людей, які вже дивляться відео у вашій ніші.</p>
+  <h2 data-t="b1t">An auction, not a feed</h2>
+  <p class="sub" data-t="b1d">You buy impressions from people already watching videos in your niche.</p>
   <div class="cards">
-    <div class="card"><div class="ico">◎</div><h3 data-t="b1t">Аукціон, а не «стрічка»</h3><p data-t="b1d">Ви купуєте покази у людей, які вже дивляться відео у вашій ніші.</p></div>
-    <div class="card"><div class="ico">▤</div><h3 data-t="b2t">Формати під мобільний</h3><p data-t="b2d">In-Feed, Spark Ads, TopView, Smart+.</p></div>
-    <div class="card"><div class="ico">◈</div><h3 data-t="b3t">Дані замість здогадок</h3><p data-t="b3d">TikTok Pixel показує, який креатив приніс покупку.</p></div>
+    <div class="card"><div class="ico">◎</div><h3 data-t="b1t">An auction, not a feed</h3><p data-t="b1d">You buy impressions from people already watching videos in your niche.</p></div>
+    <div class="card"><div class="ico">▤</div><h3 data-t="b2t">Mobile-first formats</h3><p data-t="b2d">In-Feed, Spark Ads, TopView, Smart+. Vertical 9:16 video takes the whole screen.</p></div>
+    <div class="card"><div class="ico">◈</div><h3 data-t="b3t">Data over guesses</h3><p data-t="b3d">TikTok Pixel shows which creative brought the purchase.</p></div>
   </div>
 </div></section>
 
 <section id="how"><div class="wrap">
-  <h2 data-t="s1t">Переходите на платформу</h2>
-  <p class="sub" data-t="s1d">Один клік — і ви в кабінеті TikTok Ads.</p>
+  <h2 data-t="s1t">Go to the platform</h2>
+  <p class="sub" data-t="s1d">One click and you are inside TikTok Ads.</p>
   <div class="steps">
-    <div class="step"><b data-t="s1t">Переходите на платформу</b><span data-t="s1d">Один клік — і ви в кабінеті.</span></div>
-    <div class="step"><b data-t="s2t">Створюєте бізнес-акаунт</b><span data-t="s2d">TikTok for Business: кабінет і оплата.</span></div>
-    <div class="step"><b data-t="s3t">Запускаєте кампанію</b><span data-t="s3d">Ціль, гео, бюджет, креативи.</span></div>
+    <div class="step"><b data-t="s1t">Go to the platform</b><span data-t="s1d">One click and you are inside TikTok Ads.</span></div>
+    <div class="step"><b data-t="s2t">Create a business account</b><span data-t="s2d">TikTok for Business: ad account, payment method.</span></div>
+    <div class="step"><b data-t="s3t">Launch your campaign</b><span data-t="s3d">Goal, geo, budget, creatives.</span></div>
   </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
   <h2>FAQ</h2>
-  <p class="sub" data-t="faq_sub">Коротко про головне</p>
+  <p class="sub" data-t="faq_sub">Quick answers</p>
   <div id="faqList"></div>
 </div></section>
 
 <section><div class="wrap">
   <div class="band">
     <div>
-      <h2 data-t="band_t">Готові подивитися кабінет?</h2>
-      <p data-t="band_d">Перехід займає один клік.</p>
+      <h2 data-t="band_t">Ready to see the ad account?</h2>
+      <p data-t="band_d">The transfer takes one click.</p>
     </div>
-    <a class="btn btn-main" href="#" data-aff data-t="cta">Перейти до TikTok Ads</a>
+    <a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
   </div>
 </div></section>
 </main>
 
 <footer class="site"><div class="wrap">
   <div class="cols">
-    <div><b>TikTok Ads</b><p data-t="foot">Незалежний інформаційний сервіс про рекламу в TikTok for Business.</p></div>
-    <div><b data-t="contacts">Контакти</b><ul>
+    <div><b>TikTok Ads</b><p data-t="foot">Independent information service about TikTok for Business advertising.</p></div>
+    <div><b data-t="contacts">Contacts</b><ul>
       <li><a href="mailto:info@tiktok-ads.com.ua">info@tiktok-ads.com.ua</a></li>
       <li><a href="https://t.me/tiktokadsua" target="_blank" rel="noopener">Telegram @tiktokadsua</a></li>
     </ul></div>
-    <div><b data-t="docs">Документи</b><ul>
-      <li><a href="/privacy/">Політика конфіденційності</a></li>
-      <li><a href="/terms/">Умови надання послуг</a></li>
-      <li><a href="/contacts/">Контакти</a></li>
+    <div><b data-t="docs">Documents</b><ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      <li><a href="/contacts/">Contacts</a></li>
     </ul></div>
   </div>
-  <div class="disc"><p>© 2026 TikTok Ads. <span data-t="disc">Партнерське посилання.</span></p>
-  <p>TikTok® — торгова марка ByteDance Ltd. Сторінка не є офіційним представництвом TikTok.</p></div>
+  <div class="disc"><p>© 2026 TikTok Ads. <span data-t="disc">Affiliate link: a click may earn us a commission.</span></p>
+  <p>TikTok® is a trademark of ByteDance Ltd. This page is not an official TikTok representation.</p></div>
 </div></footer>
 
-<div class="sticky"><a class="btn btn-main" href="#" data-aff data-t="cta">Перейти до TikTok Ads</a></div>
+<div class="sticky"><a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a></div>
 
 <script src="/i18n.js"></script>
 <script>
-/* ====== КОНФІГ ====== */
+/* ====== CONFIG ====== */
 var AFF_URL = "https://getstarted-tt-ads.apps.com.ua/go/ads?sub1=";
-/* залив /go/ads на свой домен → замени на "https://твой-домен/go/ads?sub1=" */
-var AFF_SUB = "sub1";                                          // ← имя параметра subid у партнёрки
-var GTAG_ID = "";                                              // GA4, напр. "G-XXXXXXXXXX"
-var ADS_CONV = "";                                             // конверсия Ads, напр. "AW-123/AbC-D"
+var AFF_SUB = "sub1";
+var GTAG_ID = "";
+var ADS_CONV = "";
+var DEFAULT_LANG = "en";
 /* ==================== */
 (function(){
-  var state = {lang: "ua", robot: false};
+  var state = {lang: DEFAULT_LANG, robot: false};
   var qs = new URLSearchParams(location.search);
-  function $(s){ return document.querySelector(s); }
+  var $ = function(s){ return document.querySelector(s); };
+
+  function renderLangs(){
+    var grid = document.getElementById("langGrid");
+    grid.innerHTML = "";
+    LANG_ORDER.forEach(function(code){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "lang"; b.setAttribute("data-lang", code);
+      b.textContent = LANG_NAMES[code] || code.toUpperCase();
+      b.addEventListener("click", function(){ apply(code); });
+      grid.appendChild(b);
+    });
+  }
 
   function apply(lang){
-    var d = L[lang]; if (!d) return;
+    var d = L[lang]; if (!d) lang = DEFAULT_LANG, d = L[lang];
     state.lang = lang;
-    document.documentElement.lang = lang === "ua" ? "uk" : lang;
+    document.documentElement.lang = (lang === "uk") ? "uk" : lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
     for (var i=0;i<4;i++){ var el=document.querySelector('[data-t="nav'+i+'"]'); if(el) el.textContent = d.nav[i]; }
-    var map = {h1:d.h1, sub:d.sub, micro:d.micro, cta:d.cta, b1t:d.b1t, b1d:d.b1d, b2t:d.b2t, b2d:d.b2d,
-               b3t:d.b3t, b3d:d.b3d, s1t:d.s1t, s1d:d.s1d, s2t:d.s2t, s2d:d.s2d, s3t:d.s3t, s3d:d.s3d,
-               band_t:d.band_t, band_d:d.band_d, disc:d.disc, foot:d.foot, docs:d.docs, contacts:d.contacts,
-               gate_title:d.gate_title, gate_sub:d.gate_sub, gate_check:d.gate_check, gate_btn:d.gate_btn, gate_note:d.gate_note, faq_sub:d.faq_sub, gate_partner:d.gate_partner, gate_skip:d.gate_skip};
+    var map = {h1:d.h1,sub:d.sub,micro:d.micro,cta:d.cta,b1t:d.b1t,b1d:d.b1d,b2t:d.b2t,b2d:d.b2d,
+      b3t:d.b3t,b3d:d.b3d,s1t:d.s1t,s1d:d.s1d,s2t:d.s2t,s2d:d.s2d,s3t:d.s3t,s3d:d.s3d,
+      band_t:d.band_t,band_d:d.band_d,disc:d.disc,foot:d.foot,docs:d.docs,contacts:d.contacts,
+      gate_title:d.gate_title,gate_sub:d.gate_sub,gate_check:d.gate_check,gate_btn:d.gate_btn,
+      gate_note:d.gate_note,gate_partner:d.gate_partner,gate_skip:d.gate_skip,faq_sub:d.faq_sub};
     document.querySelectorAll("[data-t]").forEach(function(el){
-      var k = el.getAttribute("data-t"); if (map[k] !== undefined) el.textContent = map[k];
+      var k = el.getAttribute("data-t");
+      if (map[k] !== undefined) el.textContent = map[k];
     });
     var faq = document.getElementById("faqList");
     faq.innerHTML = "";
@@ -288,32 +302,32 @@ var ADS_CONV = "";                                             // конверс
       var p = document.createElement("p"); p.textContent = pair[1];
       det.appendChild(s); det.appendChild(p); faq.appendChild(det);
     });
-    document.querySelectorAll(".lang").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-lang") === lang); });
+    document.querySelectorAll("#langGrid .lang").forEach(function(b){
+      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+    });
   }
 
-  function syncGate(){ $("#gateGo").disabled = !(state.robot && L[state.lang]); }
-  function closeGate(){
-    $("#gate").classList.add("hide");
-    document.body.classList.remove("locked");
-    try { localStorage.setItem("lp_lang", state.lang); } catch(e){}
-  }
+  function syncGate(){ $("#gateGo").disabled = !state.robot; }
+  function closeGate(){ $("#gate").classList.add("hide"); document.body.classList.remove("locked"); }
 
-  document.querySelectorAll(".lang").forEach(function(b){
-    b.addEventListener("click", function(){ apply(b.getAttribute("data-lang")); syncGate(); });
-  });
+  renderLangs();
+
   var rb = $("#robot");
-  function toggleRobot(){ state.robot = !state.robot; rb.classList.toggle("on", state.robot); rb.setAttribute("aria-checked", state.robot); syncGate(); }
+  function toggleRobot(){
+    state.robot = !state.robot;
+    rb.classList.toggle("on", state.robot);
+    rb.setAttribute("aria-checked", state.robot);
+    syncGate();
+  }
   rb.addEventListener("click", toggleRobot);
-  rb.addEventListener("keydown", function(e){ if (e.key === " " || e.key === "Enter"){ e.preventDefault(); toggleRobot(); } });
+  rb.addEventListener("keydown", function(e){ if (e.key===" "||e.key==="Enter"){ e.preventDefault(); toggleRobot(); } });
   $("#gateSkip").addEventListener("click", closeGate);
 
-  // язык: из URL (?lang=ru) → localStorage → ua
-  var initial = (qs.get("lang") || "").toLowerCase();
-  if (!L[initial]) { try { initial = localStorage.getItem("lp_lang") || "ua"; } catch(e){ initial = "ua"; } }
-  if (!L[initial]) initial = "ua";
+  var initial = (qs.get("lang")||"").toLowerCase();
+  if (!L[initial]) { try { initial = localStorage.getItem("lp_lang") || DEFAULT_LANG; } catch(e){ initial = DEFAULT_LANG; } }
+  if (!L[initial]) initial = DEFAULT_LANG;
   apply(initial); syncGate();
 
-  // ===== партнёрская ссылка =====
   function isAbs(u){ try { var x = new URL(u); return x.protocol === "http:" || x.protocol === "https:"; } catch(e){ return false; } }
   function buildUrl(){
     var gclid = qs.get("gclid") || "";
@@ -326,11 +340,13 @@ var ADS_CONV = "";                                             // конверс
     });
     return url;
   }
+
   document.querySelectorAll("a[data-aff],button[data-aff]").forEach(function(a){
     a.addEventListener("click", function(ev){
       var dest = buildUrl();
-      try { (window.dataLayer = window.dataLayer || []).push({event:"aff_click", aff_dest:dest, lang:state.lang, gclid:qs.get("gclid")||""}); } catch(e){}
-      if (AFF_URL.indexOf("REPLACE-WITH") > -1 || !isAbs(dest)) { ev.preventDefault(); alert("Партнерське посилання ще не налаштоване."); return; }
+      try { try { localStorage.setItem("lp_lang", state.lang); } catch(e){}
+            (window.dataLayer = window.dataLayer || []).push({event:"aff_click", aff_dest:dest, lang:state.lang, gclid:qs.get("gclid")||""}); } catch(e){}
+      if (AFF_URL.indexOf("REPLACE-WITH") > -1 || !isAbs(dest)) { ev.preventDefault(); alert("Affiliate link is not configured yet."); return; }
       ev.preventDefault();
       var done = false, go = function(){ if (!done){ done = true; location.href = dest; } };
       var sent = false;

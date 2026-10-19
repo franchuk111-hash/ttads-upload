@@ -1,31 +1,363 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,follow">
-<title>Перехід…</title>
-<style>body{margin:0;height:100vh;display:grid;place-items:center;background:#07080d;color:#9aa3b2;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}a{color:#ff2d6f}</style>
-<script>
-/* ==== ПАРТНЁРСКАЯ ССЫЛКА ==== */
-var AFF_BASE = "https://ad.admitad.com/g/077hu89zbv8f39f183bb76e4f989a7/";
-var AFF_SUB  = "subid";                        // параметр, который уходит в sid3
-var AFF_TAG  = "ferew763646346dffdfddddd3";    // постоянный тег (фолбэк без gclid)
-/* =========================== */
-(function(){
-  var qs = new URLSearchParams(location.search);
-  var gclid = qs.get("gclid") || "";
-  var alt = [qs.get("utm_source")||"", qs.get("utm_medium")||"", qs.get("utm_campaign")||""].join("_").replace(/^_+|_+$/g,"");
-  var sub = (qs.get("sub1") || gclid || alt || AFF_TAG).slice(0,64);
+<title>TikTok Ads for business: campaigns, creatives, analytics</title>
+<meta name="description" content="How TikTok for Business works: the auction, In-Feed and Spark Ads formats, TikTok Pixel and reporting. One click to the partner platform.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://getstarted-tt-ads.apps.com.ua/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TikTok Ads for business: campaigns, creatives, analytics">
+<meta property="og:description" content="Auction, formats, pixel, reporting. One click to the partner platform.">
+<meta property="og:url" content="https://getstarted-tt-ads.apps.com.ua/">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff2d6f'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 20l7-9 7 9' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#07080d;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);--txt:#f4f5f8;--muted:#9aa3b2;--pink:#ff2d6f;--violet:#7c3aed;--ok:#4ade80}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+.glow{position:fixed;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;z-index:0}
+.g1{width:520px;height:520px;background:#ff2d6f33;top:-180px;left:-120px}
+.g2{width:560px;height:560px;background:#7c3aed33;top:120px;right:-200px}
+.g3{width:420px;height:420px;background:#22d3ee22;bottom:-160px;left:30%}
+header.site{position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);background:rgba(7,8,13,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:70px;position:relative;z-index:1}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.3px;font-size:17px}
+.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--pink),var(--violet));display:grid;place-items:center;font-size:15px;box-shadow:0 6px 22px #ff2d6f45}
+.nav nav{display:flex;gap:26px;margin-left:auto;font-size:15px;color:var(--muted)}
+.nav nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:13px;font-weight:650;font-size:16px;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;font-family:inherit}
+.btn-main{background:linear-gradient(135deg,var(--pink),#ff5c8a);color:#fff;box-shadow:0 12px 34px #ff2d6f40}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 18px 40px #ff2d6f55}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.11)}
+.btn-sm{padding:11px 18px;font-size:14.5px;border-radius:11px}
+.hero{padding:76px 0 60px;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:13.5px;color:#cfd4de;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 12px var(--ok)}
+h1{font-size:clamp(30px,4.6vw,52px);line-height:1.08;letter-spacing:-1.4px;margin:0 0 20px;font-weight:760}
+h1 span{background:linear-gradient(120deg,var(--pink),#c084fc 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:620px;margin:0 0 30px}
+.hero-cta{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
+.micro{font-size:13.5px;color:#7d8595;margin:16px 0 0;max-width:560px}
+.phone{position:relative;justify-self:center;width:298px;height:596px;border-radius:44px;background:linear-gradient(160deg,#1a1c26,#0b0c12);border:1px solid rgba(255,255,255,.13);box-shadow:0 40px 90px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.09);padding:13px;transform:rotate(2.5deg)}
+.phone:after{content:"";position:absolute;top:13px;left:50%;transform:translateX(-50%);width:96px;height:22px;border-radius:0 0 14px 14px;background:#0b0c12}
+.screen{width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#2a1030 0%,#0d0a14 55%,#08070c 100%);position:relative;display:flex;flex-direction:column}
+.sc-top{display:flex;justify-content:space-between;padding:44px 16px 0;font-size:11.5px;color:#cfd4de;letter-spacing:.4px}
+.reel{flex:1;position:relative;display:flex;align-items:flex-end;padding:18px 15px 20px;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.75) 100%)}
+.reel-copy{position:relative;z-index:2}
+.reel-copy b{display:block;font-size:14px;margin-bottom:5px}
+.reel-copy small{color:#c9ceda;font-size:11.5px;line-height:1.4;display:block;max-width:170px}
+.mock-cta{margin-top:11px;display:inline-flex;align-items:center;gap:6px;background:var(--pink);color:#fff;font-size:11.5px;font-weight:700;padding:8px 13px;border-radius:9px}
+.bars{position:absolute;right:12px;bottom:26px;display:grid;gap:14px;z-index:2;text-align:center;font-size:9.5px;color:#e7e9ef}
+.bar{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.13);backdrop-filter:blur(4px);display:grid;place-items:center;font-size:14px}
+.metric{position:absolute;z-index:3;background:rgba(14,16,24,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:11px 14px;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.metric b{display:block;font-size:17px;letter-spacing:-.4px}
+.metric small{color:#8f97a6;font-size:11px}
+.m1{top:74px;left:-44px}
+.m2{bottom:96px;right:-40px}
+section{position:relative;z-index:1;padding:74px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(23px,3vw,34px);letter-spacing:-.9px;margin:0 0 10px;font-weight:720}
+.sub{color:var(--muted);margin:0 0 36px;max-width:660px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .2s,border-color .2s,background .2s}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:16px;background:linear-gradient(135deg,rgba(255,45,111,.2),rgba(124,58,237,.2));border:1px solid rgba(255,255,255,.1)}
+.card h3{margin:0 0 9px;font-size:18.5px;letter-spacing:-.3px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;counter-reset:s}
+.step{position:relative;padding:26px 24px 24px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+.step:before{counter-increment:s;content:counter(s,decimal-leading-zero);font-size:13px;font-weight:700;color:var(--pink);letter-spacing:1px;display:block;margin-bottom:12px}
+.step b{display:block;font-size:17.5px;margin-bottom:7px}
+.step span{color:var(--muted);font-size:15px}
+details{border:1px solid var(--line);border-radius:14px;padding:19px 22px;margin-bottom:11px;background:rgba(255,255,255,.03)}
+details summary{cursor:pointer;font-weight:620;font-size:16.5px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary:after{content:"+";float:right;color:var(--pink);font-weight:400;font-size:20px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin:13px 0 0;color:var(--muted);font-size:15px}
+.band{background:linear-gradient(120deg,rgba(255,45,111,.16),rgba(124,58,237,.16));border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:46px;display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.band h2{margin:0 0 8px}
+.band p{margin:0;color:#c3c9d6}
+footer.site{border-top:1px solid var(--line);padding:46px 0 60px;color:var(--muted);font-size:14px;position:relative;z-index:1}
+.cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-bottom:26px}
+footer b{color:#fff;font-size:15px}
+footer ul{list-style:none;padding:0;margin:10px 0 0}
+footer li{margin:7px 0}
+footer a:hover{color:#fff}
+.disc{border-top:1px solid var(--line);padding-top:20px;font-size:12.8px;line-height:1.6;color:#7d8595;max-width:900px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:rgba(9,10,16,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none}
+.sticky .btn{width:100%}
+/* GATE */
+.gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:22px;background:rgba(4,5,9,.78);backdrop-filter:blur(18px);transition:opacity .35s,visibility .35s}
+.gate.hide{opacity:0;visibility:hidden}
+.gate-card{width:100%;max-width:430px;background:linear-gradient(180deg,#13151f,#0a0b11);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:32px 28px 26px;box-shadow:0 40px 100px rgba(0,0,0,.75);text-align:center}
+.gate-card .mark{width:46px;height:46px;font-size:19px;margin:0 auto 16px;border-radius:13px}
+.gate h2{font-size:22px;margin:0 0 6px;letter-spacing:-.5px}
+.gate p.gs{color:var(--muted);font-size:14px;margin:0 0 20px}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;max-height:236px;overflow-y:auto;padding-right:4px;scrollbar-width:thin}
+.lang{padding:9px 10px;border-radius:10px;text-align:center;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#cfd4de;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+.lang:hover{border-color:rgba(255,255,255,.28)}
+.lang.on{background:linear-gradient(135deg,var(--pink),#ff5c8a);border-color:transparent;color:#fff;box-shadow:0 8px 22px #ff2d6f40}
+.robot{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:rgba(255,255,255,.03);cursor:pointer;margin-bottom:18px;user-select:none}
+.robot .box{width:24px;height:24px;border-radius:7px;border:1.6px solid rgba(255,255,255,.35);flex:0 0 24px;display:grid;place-items:center;transition:.15s;font-size:13px;color:transparent}
+.robot.on .box{background:linear-gradient(135deg,var(--pink),#ff5c8a);border-color:transparent;color:#fff}
+.robot span{font-size:14.5px;color:#e7e9ef}
+.robot small{display:block;color:#7d8595;font-size:11.5px;margin-top:2px}
+.gate .btn{width:100%}
+.gate .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.gnote{font-size:11.8px;color:#8b93a3;margin:14px 0 0;line-height:1.5}
+.glink{background:none;border:0;color:#9aa3b2;font:inherit;font-size:12.5px;margin-top:12px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:6px}
+.glink:hover{color:#fff}
+@media(max-width:900px){
+ .hero-grid{grid-template-columns:1fr;gap:44px}
+ .phone{transform:none;width:264px;height:528px}
+ .m1{left:-26px}.m2{right:-22px}
+ .nav nav{display:none}
+ .hero{padding:46px 0 40px}
+ section{padding:54px 0}
+ .band{padding:30px}
+ .sticky{display:block}
+ body{padding-bottom:78px}
+}
 
-  var url = AFF_BASE + (AFF_BASE.indexOf("?") > -1 ? "&" : "?") + AFF_SUB + "=" + encodeURIComponent(sub);
-  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(function(k){
-    var v = qs.get(k); if (v) url += "&" + k + "=" + encodeURIComponent(v);
+.langs::-webkit-scrollbar{width:5px}
+.langs::-webkit-scrollbar-thumb{background:#333a4a;border-radius:3px}
+.gate-card{max-height:92vh;overflow:auto}
+</style>
+</head>
+<body class="locked">
+<div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <div class="mark">▲</div>
+    <h2 data-t="gate_title">Choose your language</h2>
+    <p class="gs" data-t="gate_sub">Confirm you are human to continue</p>
+    <div class="langs" id="langGrid" role="group" aria-label="Language"></div>
+    <div class="robot" id="robot" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="box">✓</div>
+      <div><span data-t="gate_check">I’m not a robot</span><small data-t="gate_note">We don’t collect your data at this step</small></div>
+    </div>
+    <button class="btn btn-main" id="gateGo" type="button" disabled data-aff data-t="gate_btn">Continue</button>
+    <p class="gnote" data-t="gate_partner">Next you go to the partner website via an affiliate link. Your price does not change.</p>
+    <button class="glink" id="gateSkip" type="button" data-t="gate_skip">Read the information first</button>
+  </div>
+</div>
+
+<header class="site"><div class="wrap nav">
+  <a class="logo" href="/"><span class="mark">▲</span> TikTok Ads</a>
+  <nav>
+    <a href="#features" data-t="nav0">Features</a>
+    <a href="#how" data-t="nav1">How it works</a>
+    <a href="#faq" data-t="nav2">FAQ</a>
+    <a href="/contacts/" data-t="nav3">Contacts</a>
+  </nav>
+  <a class="btn btn-main btn-sm" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> TikTok for Business · auction · global</div>
+    <h1 data-t="h1">TikTok Ads for business: campaigns, creatives, analytics</h1>
+    <p class="lead" data-t="sub">How TikTok for Business actually works: the auction, In-Feed and Spark Ads formats, TikTok Pixel and reporting.</p>
+    <div class="hero-cta">
+      <a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
+      <a class="btn btn-ghost" href="#features" data-t="nav0">Features</a>
+    </div>
+    <p class="micro" data-t="micro">One click to the partner platform. This is an affiliate link — your price stays the same.</p>
+  </div>
+  <div class="phone" aria-hidden="true">
+    <div class="screen">
+      <div class="sc-top"><span>9:41</span><span>●●●</span></div>
+      <div class="reel">
+        <div class="reel-copy">
+          <b>TikTok Ads</b>
+          <small>In-Feed · Spark Ads · Smart+</small>
+          <div class="mock-cta">Open →</div>
+        </div>
+        <div class="bars">
+          <div><div class="bar">♥</div>12.4k</div>
+          <div><div class="bar">💬</div>318</div>
+          <div><div class="bar">↗</div>96</div>
+        </div>
+      </div>
+    </div>
+    <div class="metric m1"><b>9:16</b><small>vertical format</small></div>
+    <div class="metric m2"><b>$50</b><small>min. daily budget</small></div>
+  </div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <h2 data-t="b1t">An auction, not a feed</h2>
+  <p class="sub" data-t="b1d">You buy impressions from people already watching videos in your niche.</p>
+  <div class="cards">
+    <div class="card"><div class="ico">◎</div><h3 data-t="b1t">An auction, not a feed</h3><p data-t="b1d">You buy impressions from people already watching videos in your niche.</p></div>
+    <div class="card"><div class="ico">▤</div><h3 data-t="b2t">Mobile-first formats</h3><p data-t="b2d">In-Feed, Spark Ads, TopView, Smart+. Vertical 9:16 video takes the whole screen.</p></div>
+    <div class="card"><div class="ico">◈</div><h3 data-t="b3t">Data over guesses</h3><p data-t="b3d">TikTok Pixel shows which creative brought the purchase.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2 data-t="s1t">Go to the platform</h2>
+  <p class="sub" data-t="s1d">One click and you are inside TikTok Ads.</p>
+  <div class="steps">
+    <div class="step"><b data-t="s1t">Go to the platform</b><span data-t="s1d">One click and you are inside TikTok Ads.</span></div>
+    <div class="step"><b data-t="s2t">Create a business account</b><span data-t="s2d">TikTok for Business: ad account, payment method.</span></div>
+    <div class="step"><b data-t="s3t">Launch your campaign</b><span data-t="s3d">Goal, geo, budget, creatives.</span></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <p class="sub" data-t="faq_sub">Quick answers</p>
+  <div id="faqList"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="band">
+    <div>
+      <h2 data-t="band_t">Ready to see the ad account?</h2>
+      <p data-t="band_d">The transfer takes one click.</p>
+    </div>
+    <a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div><b>TikTok Ads</b><p data-t="foot">Independent information service about TikTok for Business advertising.</p></div>
+    <div><b data-t="contacts">Contacts</b><ul>
+      <li><a href="mailto:info@tiktok-ads.com.ua">info@tiktok-ads.com.ua</a></li>
+      <li><a href="https://t.me/tiktokadsua" target="_blank" rel="noopener">Telegram @tiktokadsua</a></li>
+    </ul></div>
+    <div><b data-t="docs">Documents</b><ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      <li><a href="/contacts/">Contacts</a></li>
+    </ul></div>
+  </div>
+  <div class="disc"><p>© 2026 TikTok Ads. <span data-t="disc">Affiliate link: a click may earn us a commission.</span></p>
+  <p>TikTok® is a trademark of ByteDance Ltd. This page is not an official TikTok representation.</p></div>
+</div></footer>
+
+<div class="sticky"><a class="btn btn-main" href="#" data-aff data-t="cta">Go to TikTok Ads</a></div>
+
+<script src="/i18n.js"></script>
+<script>
+/* ====== CONFIG ====== */
+var AFF_URL = "https://getstarted-tt-ads.apps.com.ua/go/ads?sub1=";
+var AFF_SUB = "sub1";
+var GTAG_ID = "";
+var ADS_CONV = "";
+var DEFAULT_LANG = "en";
+/* ==================== */
+(function(){
+  var state = {lang: DEFAULT_LANG, robot: false};
+  var qs = new URLSearchParams(location.search);
+  var $ = function(s){ return document.querySelector(s); };
+
+  function renderLangs(){
+    var grid = document.getElementById("langGrid");
+    grid.innerHTML = "";
+    LANG_ORDER.forEach(function(code){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "lang"; b.setAttribute("data-lang", code);
+      b.textContent = LANG_NAMES[code] || code.toUpperCase();
+      b.addEventListener("click", function(){ apply(code); });
+      grid.appendChild(b);
+    });
+  }
+
+  function apply(lang){
+    var d = L[lang]; if (!d) lang = DEFAULT_LANG, d = L[lang];
+    state.lang = lang;
+    document.documentElement.lang = (lang === "uk") ? "uk" : lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+    for (var i=0;i<4;i++){ var el=document.querySelector('[data-t="nav'+i+'"]'); if(el) el.textContent = d.nav[i]; }
+    var map = {h1:d.h1,sub:d.sub,micro:d.micro,cta:d.cta,b1t:d.b1t,b1d:d.b1d,b2t:d.b2t,b2d:d.b2d,
+      b3t:d.b3t,b3d:d.b3d,s1t:d.s1t,s1d:d.s1d,s2t:d.s2t,s2d:d.s2d,s3t:d.s3t,s3d:d.s3d,
+      band_t:d.band_t,band_d:d.band_d,disc:d.disc,foot:d.foot,docs:d.docs,contacts:d.contacts,
+      gate_title:d.gate_title,gate_sub:d.gate_sub,gate_check:d.gate_check,gate_btn:d.gate_btn,
+      gate_note:d.gate_note,gate_partner:d.gate_partner,gate_skip:d.gate_skip,faq_sub:d.faq_sub};
+    document.querySelectorAll("[data-t]").forEach(function(el){
+      var k = el.getAttribute("data-t");
+      if (map[k] !== undefined) el.textContent = map[k];
+    });
+    var faq = document.getElementById("faqList");
+    faq.innerHTML = "";
+    d.faq.forEach(function(pair, idx){
+      var det = document.createElement("details");
+      if (idx === 0) det.open = true;
+      var s = document.createElement("summary"); s.textContent = pair[0];
+      var p = document.createElement("p"); p.textContent = pair[1];
+      det.appendChild(s); det.appendChild(p); faq.appendChild(det);
+    });
+    document.querySelectorAll("#langGrid .lang").forEach(function(b){
+      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+    });
+  }
+
+  function syncGate(){ $("#gateGo").disabled = !state.robot; }
+  function closeGate(){ $("#gate").classList.add("hide"); document.body.classList.remove("locked"); }
+
+  renderLangs();
+
+  var rb = $("#robot");
+  function toggleRobot(){
+    state.robot = !state.robot;
+    rb.classList.toggle("on", state.robot);
+    rb.setAttribute("aria-checked", state.robot);
+    syncGate();
+  }
+  rb.addEventListener("click", toggleRobot);
+  rb.addEventListener("keydown", function(e){ if (e.key===" "||e.key==="Enter"){ e.preventDefault(); toggleRobot(); } });
+  $("#gateSkip").addEventListener("click", closeGate);
+
+  var initial = (qs.get("lang")||"").toLowerCase();
+  if (!L[initial]) { try { initial = localStorage.getItem("lp_lang") || DEFAULT_LANG; } catch(e){ initial = DEFAULT_LANG; } }
+  if (!L[initial]) initial = DEFAULT_LANG;
+  apply(initial); syncGate();
+
+  function isAbs(u){ try { var x = new URL(u); return x.protocol === "http:" || x.protocol === "https:"; } catch(e){ return false; } }
+  function buildUrl(){
+    var gclid = qs.get("gclid") || "";
+    var sub = gclid || ([qs.get("utm_source")||"", qs.get("utm_medium")||"", qs.get("utm_campaign")||""].join("_").replace(/^_+|_+$/g,"") || "direct");
+    var url = AFF_URL;
+    if (/[?&]$/.test(url) || url.indexOf("?") > -1) url = url + encodeURIComponent(sub);
+    else url = url + "?" + AFF_SUB + "=" + encodeURIComponent(sub);
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(function(k){
+      var v = qs.get(k); if (v) url += "&" + k + "=" + encodeURIComponent(v);
+    });
+    return url;
+  }
+
+  document.querySelectorAll("a[data-aff],button[data-aff]").forEach(function(a){
+    a.addEventListener("click", function(ev){
+      var dest = buildUrl();
+      try { try { localStorage.setItem("lp_lang", state.lang); } catch(e){}
+            (window.dataLayer = window.dataLayer || []).push({event:"aff_click", aff_dest:dest, lang:state.lang, gclid:qs.get("gclid")||""}); } catch(e){}
+      if (AFF_URL.indexOf("REPLACE-WITH") > -1 || !isAbs(dest)) { ev.preventDefault(); alert("Affiliate link is not configured yet."); return; }
+      ev.preventDefault();
+      var done = false, go = function(){ if (!done){ done = true; location.href = dest; } };
+      var sent = false;
+      try {
+        if (window.gtag && ADS_CONV) { gtag("event","conversion",{send_to:ADS_CONV,event_callback:go,event_timeout:900}); sent = true; }
+        if (window.gtag && GTAG_ID) { gtag("event","aff_click",{aff_dest:dest,gclid:qs.get("gclid")||""}); sent = true; }
+      } catch(e){}
+      setTimeout(go, sent ? 900 : 60);
+    });
   });
-  location.replace(url);
-  setTimeout(function(){ location.href = url; }, 300);
 })();
 </script>
-</head>
-<body><p>Переходимо… Якщо нічого не сталося — <a href="https://ad.admitad.com/g/077hu89zbv8f39f183bb76e4f989a7/">натисніть тут</a>.</p></body>
+</body>
 </html>
