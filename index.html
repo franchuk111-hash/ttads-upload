@@ -171,7 +171,6 @@ h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.03em;font-we
 .robot small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 #gateGo{width:100%;margin-top:12px;height:48px}
 #gateGo:disabled{background:#F4C9D7;border-color:#F4C9D7;color:#fff;cursor:not-allowed}
-.gnote{margin-top:10px;font-size:12px;color:#8A8B91;line-height:1.5}
 .glink{margin-top:10px;background:none;border:0;color:var(--link);font-family:inherit;font-size:13.5px;
   font-weight:600;cursor:pointer}
 .glink:hover{text-decoration:underline}
@@ -210,7 +209,6 @@ h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.03em;font-we
       <div><span data-t="gate_check">I’m not a robot</span><small data-t="gate_note">We don’t collect your data at this step</small></div>
     </div>
     <button class="btn btn-main" id="gateGo" type="button" disabled data-aff data-t="gate_btn">Continue</button>
-    <p class="gnote" data-t="gate_partner">Next you go to the partner website via an affiliate link. Your price does not change.</p>
     <button class="glink" id="gateSkip" type="button" data-t="gate_skip">Read the information first</button>
   </div>
 </div>
@@ -351,7 +349,7 @@ var DEFAULT_LANG = "en";
       b3t:d.b3t,b3d:d.b3d,s1t:d.s1t,s1d:d.s1d,s2t:d.s2t,s2d:d.s2d,s3t:d.s3t,s3d:d.s3d,
       band_t:d.band_t,band_d:d.band_d,disc:d.disc,foot:d.foot,docs:d.docs,contacts:d.contacts,
       gate_title:d.gate_title,gate_sub:d.gate_sub,gate_check:d.gate_check,gate_btn:d.gate_btn,
-      gate_note:d.gate_note,gate_partner:d.gate_partner,gate_skip:d.gate_skip,faq_sub:d.faq_sub};
+      gate_note:d.gate_note,gate_skip:d.gate_skip,faq_sub:d.faq_sub};
     document.querySelectorAll("[data-t]").forEach(function(el){
       var k = el.getAttribute("data-t");
       if (map[k] !== undefined) el.textContent = map[k];
