@@ -372,6 +372,22 @@ var DEFAULT_LANG = "en";
   function syncGate(){ $("#gateGo").disabled = !state.robot; }
   function closeGate(){ $("#gate").classList.add("hide"); document.body.classList.remove("locked"); }
 
+  /* --- Google tag loader: подключается только если заданы ID --- */
+  (function loadGtag(){
+    var ids = [];
+    if (GTAG_ID) ids.push(GTAG_ID);
+    if (ADS_CONV) ids.push(ADS_CONV.split("/")[0]);
+    if (!ids.length) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ids[0]);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag("js", new Date());
+    ids.forEach(function(id){ gtag("config", id); });
+  })();
+
   renderLangs();
 
   var rb = $("#robot");
