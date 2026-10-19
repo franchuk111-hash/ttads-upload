@@ -325,7 +325,13 @@ var DEFAULT_LANG = "en";
   $("#gateSkip").addEventListener("click", closeGate);
 
   var initial = (qs.get("lang")||"").toLowerCase();
-  if (!L[initial]) { try { initial = localStorage.getItem("lp_lang") || DEFAULT_LANG; } catch(e){ initial = DEFAULT_LANG; } }
+  if (!L[initial]) {
+    try { initial = localStorage.getItem("lp_lang") || ""; } catch(e){ initial = ""; }
+  }
+  if (!L[initial]) {
+    var nav = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+    initial = L[nav] ? nav : DEFAULT_LANG;
+  }
   if (!L[initial]) initial = DEFAULT_LANG;
   apply(initial); syncGate();
 
